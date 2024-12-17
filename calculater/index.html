@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Calculater</title>
+</head>
+
+<body class="flex h-[100vh] w-full justify-center items-center bg-blue-100 font-[cursive]">
+    <div class="border-2 border-black rounded p-2 w-[80%] bg-blue-50">
+        <input type="text" class="w-full border-black border-2 text-right p-2 text-xl rounded border text-grey-500"
+            placeholder="0" id="InputBox" readonly>
+        <div class="flex justify-between space-x-2">
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">AC</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">DEL</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">%</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">/</button>
+        </div>
+        <div class="flex justify-between space-x-2">
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">7</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">8</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">9</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">*</button>
+        </div>
+        <div class="flex justify-between space-x-2">
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">4</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">5</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">6</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">-</button>
+        </div>
+        <div class="flex justify-between space-x-2">
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">1</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">2</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">3</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">+</button>
+        </div>
+        <div class="flex justify-between space-x-2">
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">00</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">0</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">.</button>
+            <button
+                class="bg-blue-100/50 transition-colors hover:bg-blue-100/90 border-2 border-black rounded p-1 my-1 text-sm w-full">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

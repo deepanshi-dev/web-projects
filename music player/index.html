@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player Design - Easy Tutorials</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="music-player">
+        <nav>
+          <div class="circle">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="circle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </nav>
+        <img src="media/song.png" class="song-img" />
+        <h1 id="songName">song 1</h1>
+        <p>unknown</p>
+
+        <audio id="song">
+          <source src="media/song.mp3" type="audio/mpeg" />
+        </audio>
+        <input type="range" value="0" id="progress" />
+
+        <div class="controls">
+          <div onclick="prev()"><i class="fa-solid fa-backward"></i></div>
+          <div onclick="playPause()">
+            <i class="fa-solid fa-play" id="ctrlIcon"></i>
+          </div>
+          <div onclick="next()"><i class="fa-solid fa-forward"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let songs = [
+        {
+          src: "media/ektarfa.mp3",
+          img: "media/ektarfaimg.jpg",
+          name: "Ek Tarfa",
+        },
+        {
+          src: "media/song.mp3",
+          img: "media/song.png",
+          name: "Dhundne Ko",
+          singer: "unknown",
+        },
+      ];
+
+      let currentIndex = 0;
+
+      let progress = document.getElementById("progress");
+      let song = document.getElementById("song");
+      let songName = document.getElementById("songName");
+      let songImg = document.getElementsByClassName("song-img")[0];
+      let ctrlIcon = document.getElementById("ctrlIcon");
+
+      song.src = songs[currentIndex].src;
+      songImg.src = songs[currentIndex].img;
+      songName.innerHTML = songs[currentIndex].name;
+      song.onloademetadata = function () {
+        progress.max = song.duration;
+        progess.value = song.currentTime;
+      };
+
+      function next() {
+        if (currentIndex == 1) return;
+        currentIndex = 1;
+        song.src = songs[currentIndex].src;
+        songImg.src = songs[currentIndex].img;
+        songName.innerHTML = songs[currentIndex].name;
+      }
+
+      function prev() {
+        if (currentIndex == 0) return;
+        currentIndex = 0;
+        song.src = songs[currentIndex].src;
+        songImg.src = songs[currentIndex].img;
+        songName.innerHTML = songs[currentIndex].name;
+      }
+
+      function playPause() {
+        if (ctrlIcon.classList.contains("fa-pause")) {
+          song.pause();
+          ctrlIcon.classList.remove("fa-pause");
+          ctrlIcon.classList.add("fa-play");
+        } else {
+          song.play();
+          ctrlIcon.classList.add("fa-pause");
+          ctrlIcon.classList.remove("fa-play");
+        }
+      }
+
+      if (song.play()) {
+        setInterval(() => {
+          progress.value = song.currentTime;
+        }, 500);
+      }
+
+      progress.onchange = function () {
+        song.play();
+        song.currentTime = progress.value;
+        ctrlIcon.classList.add("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+      };
+    </script>
+  </body>
+</html>
